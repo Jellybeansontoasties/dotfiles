@@ -1,0 +1,62 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Secrets and credentials
+*.key
+*.pem
+*.env
+*.secret
+*.secrets
+*.credentials
+*.token
+id_rsa
+id_ed25519
+*.p12
+*.pfx
+*.gpg
+.ssh/
+.gnupg/
+
+# Electron apps (cookies, tokens, sessions, local storage)
+.config/discord/
+.config/figma-linux/
+.config/Cursor/
+.config/Electron/
+
+# App data with auth/personal info
+.config/warp-terminal/
+.config/pulse/
+.config/dconf/
+.config/session/
+
+# Runtime/system state
+.config/systemd/
+.config/go/
+.config/gops/
+.config/procps/
+.config/yay/
+
+# Cache and runtime
+*.cache
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.leveldb
+*.ldb
+__pycache__/
+node_modules/
+Cookies
+Cookies-journal
+Local Storage/
+Session Storage/
+IndexedDB/
+

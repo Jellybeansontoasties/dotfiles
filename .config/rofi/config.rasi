@@ -1,0 +1,97 @@
+configuration {
+    modi:                       "drun,filebrowser,window";
+    show-icons:                 true;
+    display-drun:               "APPS";
+    display-filebrowser:        "FILES";
+    display-window:             "WIN";
+    drun-display-format:        "{name}";
+    font:                        "JetBrains Mono Nerd Font 10";
+}
+
+* {
+    /* Your Kitty Colors */
+    bg:      #1B0906FF; /* Dark Red-ish Background */
+    bg-alt:  #3a401aFF; /* Deep Moss */
+    fg:      #FF8C00FF; /* Brilliant Orange */
+    sel:     #FF8C00FF; /* Selection Background */
+    txt-sel: #1a1c0bFF; /* Dark text on Orange cursor */
+
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+window {
+    width:            600px;
+    border:           2px;
+    border-color:     @fg;
+    border-radius:    10px;
+    padding:          15px;
+}
+
+mainbox {
+    children: [ inputbar, listview, mode-switcher ];
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    padding: 10px;
+    background-color: @bg-alt;
+    border-radius: 5px;
+    margin: 0 0 10px 0;
+}
+
+prompt {
+    background-color: inherit;
+    text-color: inherit;
+    font: "JetBrains Mono Nerd Font Bold 10";
+}
+
+entry {
+    background-color: inherit;
+    text-color: inherit;
+    placeholder: "Search...";
+}
+
+listview {
+    lines: 10;
+    columns: 1;
+    fixed-height: true;
+}
+
+element {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+element selected {
+    background-color: @sel;
+    text-color:       @txt-sel;
+}
+
+element-icon {
+    size: 24px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+mode-switcher {
+    spacing: 10px;
+    margin: 10px 0 0 0;
+}
+
+button {
+    padding: 5px;
+    background-color: @bg-alt;
+    text-color: @fg;
+    border-radius: 5px;
+}
+
+button selected {
+    background-color: @fg;
+    text-color: @bg;
+}

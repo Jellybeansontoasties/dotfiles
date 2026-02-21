@@ -1,0 +1,149 @@
+# ╭────────────────────────────────────────────────────────────────────────────────────╮
+# │                   󰣇 Hyprland Config | Victus Edition | /ᐠづ｡◕‿‿◕｡マづ              │
+# ╰────────────────────────────────────────────────────────────────────────────────────╯
+# /ᐠ˵- ⩊ -˵マ Programs /ᐠ˵- ⩊ -˵マ ----------------------------------------------------
+	$menu        = rofi -show drun 
+     	$mainMod     = SUPER                  #                      ⢀⠤⡀
+     	$browser     = zen-browser            #       ⢠⠊⣉⠒⠤⢀⡀       ⡐⢁⠴⢜⢄
+     	$terminal    = kitty                  #       ⡎⢸  ⠉⠐⠢⢌⠑⢄   ⡸ ⡆  ⠣⠱⡀
+     	$fileManager = dolphin                #       ⡇⢸     ⣀⠗⠉⠉⠉⠙⠢⠤⢃⣀  ⢃⢱
+#					              ⡇⠘⣄⢀⠔⠉              ⠘⡄
+#                                                     ⢇    ⠁    ⠒⠊    ⠈⠒    ⡄
+#                                                     ⢸         ⢀⣀⣀⡀    ⢀⣀⣀⡀⢣ 
+#                                                     ⡸    \\\ ⠛⠛⠛⠛⠛    ⠘⠛⠛⠛/⢄
+#                                                    ⡁          ⢠⠒⠢⠈⠒⠊⠒⠊  ⡠⢄ ⡘
+#                                                    ⠱⣀        ⢀⠜  ⠇    ⢀⠔⠁ ⡏
+#                                                       ⠑⠤⢄⣀  ⠔⠁  ⡜    ⠊⠁ ⢀⠜  
+
+# ⚞ ◉ ⏖ ◉ ⚟ Monitors  ⚞ ◉ ⏖ ◉ ⚟ -------------------------------------------------------
+	monitor = HDMI-A-1, 1920x1080@60, 0x0, 1        # Home Office extention: Right
+        monitor = eDP-1, 1920x1080@165, 0x1080, 1       # my main
+# ദ്ദി（• ˕ •マ.ᐟ Auto-start ദ്ദി（• ˕ •マ.ᐟ --------------------------------------------
+	exec-once = dunst
+	exec-once = swww-daemon
+	exec-once = sleep 1 && swww img /home/owo/Cat_train.gif
+	exec-once = eww daemon
+	exec-once = eww open bar     
+
+# •ﻌ• Environment Variables •ﻌ• -------------------------------------------------------
+	env = XCURSOR_SIZE,24
+	env = HYPRCURSOR_SIZE,24
+
+# ( ˶°ㅁ°) !! ᡕᠵデᡁ᠊╾━  *the looks* ---------------------------------------------------
+general {
+    	gaps_in = 5
+    	gaps_out = 20
+    	border_size = 2
+    	col.active_border = rgba(ff8c00ff) 45deg
+    	col.inactive_border = rgba(3a401aff)
+    layout = dwindle
+}
+
+decoration {
+    rounding = 10
+    shadow {
+        enabled = true
+        range = 4
+        render_power = 3
+        color = rgba(1a1a1aee)
+    }
+    blur {
+        enabled = true
+        size = 3
+        passes = 1
+        vibrancy = 0.1696
+    }
+}
+
+animations {
+    enabled = false # Obviously
+}
+
+# /ᐠ ◞ ᆺ ◟マ input? /ᐠ ◞ ᆺ ◟マ ----------------------------------------------------------
+input {
+    numlock_by_default = true
+    kb_layout = us
+    follow_mouse = 1
+    sensitivity = 0
+    touchpad { 
+         natural_scroll = false 
+    }
+}
+
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ ──────────────────────── KEYBINDINGS CONFIGURATION ─────────────────────── │
+# └────────────────────────────────────────────────────────────────────────────┘
+
+# ʕ｡•ﻌ•｡ʔ hp victus special keys ʕ｡•ﻌ•｡ʔ ----------------------------------------------
+bind = , XF86Launch2, exec, $browser           # Diamond Key
+bind = , XF86Calculator, exec, $menu           # Calc Key
+bind = , Insert, exec, cursor --no-sandbox     # Insert Key
+bind = , Print, exec, warp-terminal            # Print Key
+
+# (•˕ •マ.ᐟ regular binds (•˕ •マ.ᐟ ---------------------------------------------------
+
+bind = SHIFT, KP_Insert, exec, $terminal       # Numpad 0
+bind = SHIFT, KP_End,    exec, $fileManager    # Numpad 1
+bind = SHIFT, KP_Down,   exec, figma-linux     # Numpad 2
+bind = $mainMod, X, 	 killactive,           # SHIFT + Numpad /
+bind = SHIFT, KP_Next, 	 killactive,               # Numpad 3
+bind = $mainMod, SPACE,  exec, rofi -show drun & 
+# bind = SHIFT, KP_Next,   exec,               # Numpad 3
+# bind = SHIFT, KP_Left,   exec,               # Numpad 4
+# bind = SHIFT, KP_Begin,  exec,               # Numpad 5
+# bind = SHIFT, KP_Right,  exec,               # Numpad 6
+
+# --- window stuff ---
+bind = $mainMod, M, exit,
+bind = $mainMod, V, togglefloating,
+bind = $mainMod, P, pseudo, # dwindle
+bind = $mainMod, J, togglesplit, # dwindle
+
+# --- focus --- #
+bind = $mainMod, left, movefocus, l
+bind = $mainMod, right, movefocus, r
+bind = $mainMod, up, movefocus, u
+bind = $mainMod, down, movefocus, d
+
+# --- workspace access --- #
+bind = $mainMod, 1, workspace, 1
+bind = $mainMod, 2, workspace, 2
+bind = $mainMod, 3, workspace, 3
+bind = $mainMod, 4, workspace, 4
+bind = $mainMod, 5, workspace, 5
+bind = $mainMod, 6, workspace, 6
+bindm = $mainMod, mouse:272, movewindow
+bindm = $mainMod, mouse:273, resizewindow
+
+# --- moving workspaces --- #
+bind = $mainMod SHIFT, 1, movetoworkspace, 1
+bind = $mainMod SHIFT, 2, movetoworkspace, 2
+bind = $mainMod SHIFT, 3, movetoworkspace, 3
+bind = $mainMod SHIFT, 4, movetoworkspace, 4
+bind = $mainMod SHIFT, 5, movetoworkspace, 5
+bind = $mainMod SHIFT, 6, movetoworkspace, 6
+
+# --- 🔊 Media & Audio (PipeWire/WirePlumber) ---
+# Allows volume control even when the screen is locked
+bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindl = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindel = ,XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+
+bindel = ,XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-
+
+# --- 🧊 Hyprland Tiling Rules ---
+# Stops apps from trying to "maximize" themselves (which breaks the tiling logic)
+windowrule = suppressevent maximize, class:.*
+
+# Makes your file manager (Dolphin) pop up in a floating window instead of tiling
+windowrule = float, class:^(org.kde.dolphin)$
+windowrule = size 700 500, class:^(org.kde.dolphin)$
+
+# Requires playerctl
+bindl = , XF86AudioNext, exec, playerctl next
+bindl = , XF86AudioPause, exec, playerctl play-pause
+bindl = , XF86AudioPlay, exec, playerctl play-pause
+bindl = , XF86AudioPrev, exec, playerctl previous
+
+

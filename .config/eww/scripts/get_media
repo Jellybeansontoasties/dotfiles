@@ -1,0 +1,3 @@
+#!/bin/bash
+# Force playerctl to follow metadata changes instantly
+playerctl metadata --format '{"title": "{{title}}", "artist": "{{artist}}", "art": "{{mpris:artUrl}}", "status": "{{status}}"}' --follow

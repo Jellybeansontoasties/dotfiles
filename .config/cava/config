@@ -1,0 +1,19 @@
+[general]
+framerate = 60
+autosens = 1
+bars = 0
+bar_width = 3
+bar_spacing = 1
+
+[input]
+method = pulse
+
+[output]
+method = ncurses
+
+[color]
+background = default
+gradient = 1
+gradient_count = 2
+gradient_color_1 = '#1B0906'
+gradient_color_2 = '#FF8C00'
